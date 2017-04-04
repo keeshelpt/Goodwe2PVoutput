@@ -4,6 +4,7 @@ class goodweConfig :
    PVOUTPUT_SYSTEM_ID = 'pvoutput_system_id'
    PVOUTPUT_API = 'pvoutput_api'
    CSV_DIR = 'csv_dir'
+   GOODWE_PASS = 'goodwe_pass'
 
    #--------------------------------------------------------------------------
    def __init__( self, configFile):
@@ -34,6 +35,8 @@ class goodweConfig :
 	       self.pvoutput_api = line.replace(self.PVOUTPUT_API, '')
 	    if self.CSV_DIR in line:
 	       self.csv_dir = line.replace(self.CSV_DIR, '')
+		if self.GOODWE_PASS in line:
+	       self.goodwe_pass = line.replace(self.GOODWE_PASS, '')
 
 
    #--------------------------------------------------------------------------
@@ -48,7 +51,7 @@ class goodweConfig :
       print self.PVOUTPUT_SYSTEM_ID + " (" + self.pvoutput_system_id + ")"
       print self.PVOUTPUT_API + " (" + self.pvoutput_api + ")"
       print self.CSV_DIR + " (" + self.csv_dir + ")"
-      
+      print self.GOODWE_PASS + " (" + self.goodwe_pass + ")"
             
    #--------------------------------------------------------------------------
    def get_goodwe_system_id( self):
@@ -104,3 +107,9 @@ class goodweConfig :
    # Returns the pvoutput_url
    #
       return self.pvoutput_url
+
+   #--------------------------------------------------------------------------
+   def get_goodwe_pass( self):
+   # Returns the goodwe_pass
+   #
+      return self.goodwe_pass
