@@ -56,8 +56,9 @@ if __name__ == "__main__":
    process = processData.processData( pvoutput)
    
    # Request password for Goodwe-power.com
-   passwd_text = 'Supply password for ' + str(config.get_goodwe_loginUrl()) + ': '
-   password = getpass.getpass( passwd_text)
+   #passwd_text = 'Supply password for ' + str(config.get_goodwe_loginUrl()) + ': '
+   #password = getpass.getpass( passwd_text)
+   password = config.get_goodwe_pass()
    goodwe.login( config.get_goodwe_user_id(), password)
 
    # Perform main loop
