@@ -34,8 +34,8 @@ class goodweConfig :
 	    if self.PVOUTPUT_API in line:
 	       self.pvoutput_api = line.replace(self.PVOUTPUT_API, '')
 	    if self.CSV_DIR in line:
-	       self.csv_dir = line.replace(self.CSV_DIR, '')
-		if self.GOODWE_PASS in line:
+		   self.csv_dir = line.replace(self.CSV_DIR, '')
+	    if self.GOODWE_PASS in line:
 	       self.goodwe_pass = line.replace(self.GOODWE_PASS, '')
 
 
