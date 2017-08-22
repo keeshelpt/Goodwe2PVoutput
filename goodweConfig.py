@@ -4,7 +4,11 @@ class goodweConfig :
    PVOUTPUT_SYSTEM_ID = 'pvoutput_system_id'
    PVOUTPUT_API = 'pvoutput_api'
    CSV_DIR = 'csv_dir'
+<<<<<<< HEAD
    GOODWE_PASS = 'goodwe_pass'
+=======
+   SPLINE_FIT = 'spline_fit'
+>>>>>>> 52821841955f8aaaad66be130512a2954cba9458
 
    #--------------------------------------------------------------------------
    def __init__( self, configFile):
@@ -16,7 +20,8 @@ class goodweConfig :
       self.goodwe_url = 'http://goodwe-power.com/PowerStationPlatform/PowerStationReport/InventerDetail'
       self.goodwe_loginUrl = 'http://goodwe-power.com/User/Login'
       self.pvoutput_url = 'http://pvoutput.org/service/r2/addstatus.jsp'
-
+      self.spline_fit = False
+      
       with open( configFile) as fp:
          for line in fp:
 	    line = line[:line.find('#')]
@@ -34,10 +39,16 @@ class goodweConfig :
 	    if self.PVOUTPUT_API in line:
 	       self.pvoutput_api = line.replace(self.PVOUTPUT_API, '')
 	    if self.CSV_DIR in line:
+<<<<<<< HEAD
 		   self.csv_dir = line.replace(self.CSV_DIR, '')
 	    if self.GOODWE_PASS in line:
 	       self.goodwe_pass = line.replace(self.GOODWE_PASS, '')
 
+=======
+	       self.csv_dir = line.replace(self.CSV_DIR, '')
+	    if self.SPLINE_FIT in line:
+               self.spline_fit = line.replace(self.SPLINE_FIT, '') == "True"
+>>>>>>> 52821841955f8aaaad66be130512a2954cba9458
 
    #--------------------------------------------------------------------------
    def to_string( self):
@@ -51,7 +62,12 @@ class goodweConfig :
       print self.PVOUTPUT_SYSTEM_ID + " (" + self.pvoutput_system_id + ")"
       print self.PVOUTPUT_API + " (" + self.pvoutput_api + ")"
       print self.CSV_DIR + " (" + self.csv_dir + ")"
+<<<<<<< HEAD
       print self.GOODWE_PASS + " (" + self.goodwe_pass + ")"
+=======
+      print self.SPLINE_FIT + " (" + str(self.spline_fit) + ")"
+      
+>>>>>>> 52821841955f8aaaad66be130512a2954cba9458
             
    #--------------------------------------------------------------------------
    def get_goodwe_system_id( self):
@@ -109,7 +125,14 @@ class goodweConfig :
       return self.pvoutput_url
 
    #--------------------------------------------------------------------------
+<<<<<<< HEAD
    def get_goodwe_pass( self):
    # Returns the goodwe_pass
    #
       return self.goodwe_pass
+=======
+   def get_spline_fit( self):
+   # Returns the pvoutput_url
+   #
+      return self.spline_fit
+>>>>>>> 52821841955f8aaaad66be130512a2954cba9458
